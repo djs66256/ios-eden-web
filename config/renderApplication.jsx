@@ -15,7 +15,7 @@ export default function renderApplication(routes, stores, options) {
 
 		// On every page navigation invalidate data from the stores
 		// This is not needed when the server notifies the client about changes (WebSocket, SSE)
-		if(!initialRun) {
+		/** if(!initialRun) {
 			Object.keys(stores).forEach(function(key) {
 				stores[key].outdate();
 			});
@@ -39,12 +39,12 @@ export default function renderApplication(routes, stores, options) {
 			ReactUpdates.batchedUpdates(function() {
 				stores.Router.setItemData("transition", null);
 			});
-
-			// Render the components with the stores
+*/
+			// Render the components with the stores  /** stores={stores} */
 			React.render(
-				<StoresWrapper Component={Application} stores={stores}/>,
+				<StoresWrapper Component={Application} />,
 				document.getElementById("content")
 			);
-		});
+		//});
 	});
 }

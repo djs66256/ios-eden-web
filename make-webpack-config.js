@@ -10,7 +10,7 @@ module.exports = function(options) {
 		// second: options.prerender ? "./config/secondPrerenderer" : "./config/secondApp"
 	};
 	var loaders = {
-		"jsx": options.hotComponents ? ["react-hot-loader", "babel-loader?stage=0"] : "babel-loader?stage=0",
+		"jsx|js": options.hotComponents ? ["react-hot-loader", "babel-loader?stage=0"] : "babel-loader?stage=0",
 		"js": {
 			loader: "babel-loader?stage=0",
 			include: path.join(__dirname, "app")
